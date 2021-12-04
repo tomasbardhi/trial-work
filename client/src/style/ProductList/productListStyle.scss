@@ -1,0 +1,416 @@
+.productionList{
+    max-width: 1920px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 30px;
+
+    .productAdd{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        margin-bottom: 30px;
+
+        input[type="text"]{
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            width: 15%;
+            // margin: 0px 10px;
+            border: 1px solid rgb(49, 49, 49);
+            background-color: rgb(49, 49, 49);
+            color: white;
+            border-radius: 5px;
+            margin: 0px 5px;
+            font-weight: 400;
+            font-size: 18px;
+            padding: 0px 15px;
+
+            &:focus{
+                outline: none;
+            }
+        }
+
+        .checkboxDiv{
+            position: relative;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            width: 10%;
+            margin: 0px 5px;
+            font-weight: 400;
+            font-size: 18px;
+            
+            div{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.2s;
+                border: 1px solid crimson;
+                background-color: crimson;
+                color: white;
+                border-radius: 5px;
+            }
+
+            input{  
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            input[type=checkbox]:checked ~ div {
+                background-color: #539461;
+                border-color: #539461;
+                color: white;
+            }
+
+        }
+
+        .action{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            border: 1px solid rgb(27, 27, 27);
+            border-radius: 5px;
+            padding: 10px 30px;
+            margin: 0px 5px;
+            background-color: rgb(27, 27, 27);
+            color: white;
+            font-weight: 600;
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgb(12, 12, 12);
+                border-color: rgb(12, 12, 12);
+            }
+
+        }
+    }
+
+    ul {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+
+        li{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 200px;
+            border-radius: 10px;
+            border: 1px solid rgb(197, 197, 197);
+            transition: all 0.2s;
+            padding: 20px;
+            background-color: rgb(245, 245, 245);
+
+            &:hover{
+                // box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+                // cursor: pointer;
+                border-color: rgb(119, 119, 119);
+            }
+
+            .stock{
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                width: 12px;
+                height: 12px;
+                background-color: crimson;
+                border-radius: 100px;
+            }
+
+            .inStock{
+                background-color: #43aa59;
+            }
+
+
+            .productName, .productDescription, .productOther{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                flex: 1;
+                text-transform: capitalize;
+                margin: 2.5px 0px;
+            
+                p{
+                    text-align: center;
+                }
+            }
+
+            .productName{
+                font-weight: 500;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+
+            .productDescription{
+                color: rgb(83, 83, 83);
+                font-size: 14px;
+            }
+
+            .productOther{
+                flex-direction: row;
+
+                .actions{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 70%;
+                    height: 100%;
+
+                    .update, .delete{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50%;
+                        height: 100%;
+                        border: 1px solid rgb(41, 41, 41);
+                        transition: all 0.2s;
+                        margin: 0px 5px;
+                        border-radius: 100px;
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+
+                    .delete:hover{
+                        background-color: crimson;
+                        color: white;
+                        border-color: crimson;
+                    }
+
+                    .update:hover{
+                        background-color: rgb(12, 12, 12);
+                        color: white;
+                    }
+
+                }
+
+                .priceWrapper{
+
+                    height: 100%;
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 20px;
+                    padding: 0px 10px;
+                
+                    .currency{
+                        padding-left: 5px;
+                    }
+                    
+                }
+
+            }
+
+        }
+    }
+
+    .pagination{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+
+
+        *{
+            text-decoration: none;
+            color: black;
+        }
+
+        p{
+            pointer-events: none;
+            user-select: none;
+        }
+
+        ul {
+            justify-self: center;
+            // width: auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 50px);
+            gap: 10px;
+            justify-content: center;
+    
+            li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 50px;
+                border-radius: 100px;
+                border: 1px solid rgb(126, 126, 126);
+                transition: all 0.2s;
+                padding: 10px;
+    
+                &:hover{
+                    box-shadow: none;
+                    cursor: pointer;
+                    border-color: rgb(44, 44, 44);
+                    background-color: rgb(44, 44, 44);
+                    
+                    p{
+                        color: white;
+                    }
+
+                }
+    
+            }
+
+            .currentPage{
+                background-color: rgb(44, 44, 44);
+                p{
+                    color: white;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .productionList{
+        .productAdd{
+    
+            input[type="text"]{
+                width: 100%;
+            }
+    
+            .checkboxDiv{
+                width: 50%;
+                
+                div{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 0.2s;
+                    border: 1px solid crimson;
+                    background-color: crimson;
+                    color: white;
+                    border-radius: 5px;
+                }
+    
+            }
+    
+            .action{
+                width: 20%;
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .productionList{
+        .productAdd{
+    
+            input[type="text"]{
+                width: 100%;
+            }
+    
+            .checkboxDiv{
+                width: 100%;
+                
+                div{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 0.2s;
+                    border: 1px solid crimson;
+                    background-color: crimson;
+                    color: white;
+                    border-radius: 5px;
+                }
+    
+            }
+    
+            .action{
+                width: 40%;
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .productionList{
+        padding-top: 0px;
+
+        .productAdd{
+                flex-direction: column;
+                height: auto;
+
+
+            input[type="text"]{
+                width: 100%;
+                margin: 2.5px 0px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+    
+            .checkboxDiv{
+                width: 100%;
+                margin: 2.5px 0px;
+                
+                div{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 0.2s;
+                    border: 1px solid crimson;
+                    background-color: crimson;
+                    color: white;
+                    border-radius: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+    
+            }
+    
+            .action{
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin: 2.5px 0px;
+            }
+        }
+    }
+}
